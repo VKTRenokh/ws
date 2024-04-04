@@ -14,6 +14,11 @@ export class ChatComponent extends BaseComponent<HTMLDivElement> {
       new BaseComponent<HTMLButtonElement>({
         onclick: () => chatService.send(input.getValue()),
         txt: "send",
+        style: {
+          backgroundColor: "grey",
+          color: "black",
+          padding: "20px",
+        },
       }),
     );
     this.chatService.on((message) => {
