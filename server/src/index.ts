@@ -1,6 +1,7 @@
 import type { ServerWebSocket } from "bun";
 
 let connections: ServerWebSocket<unknown>[] = [];
+
 const server = Bun.serve({
   hostname: "localhost",
   port: 8080,
