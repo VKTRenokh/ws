@@ -5,20 +5,20 @@ import { ChatService } from "./services";
 export class ChatComponent extends BaseComponent<HTMLDivElement> {
   constructor(private chatService: ChatService) {
     const input = Input({ placeHolder: "send something to the server" });
-    const messageP = new BaseComponent({ tag: "p" });
+    const messageP = new BaseComponent({
+      tag: "p",
+      className: "color-cyan-500",
+    });
 
     super(
-      { tag: "div" },
+      { tag: "div", className: "items-center justify-center flex-col" },
       input,
       messageP,
+
       new BaseComponent<HTMLButtonElement>({
         onclick: () => chatService.send(input.getValue()),
         txt: "send",
-        style: {
-          backgroundColor: "grey",
-          color: "black",
-          padding: "20px",
-        },
+        className: "bg-cyan-500 px-2",
       }),
     );
     this.chatService.on((message) => {

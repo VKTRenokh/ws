@@ -1,6 +1,7 @@
 import { chat } from "./chat";
 import { chatService } from "./chat/services";
 import { BaseComponent } from "./components/base-component";
+import "../index.css";
 
 class Application extends BaseComponent<HTMLDivElement> {
   constructor(parent: HTMLElement) {
